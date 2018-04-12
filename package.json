@@ -66,6 +66,7 @@
     "time-grunt": "^1.4.0"
   },
   "dependencies": {
+    "ajv": "^6.4.0",
     "ember-qunit": "^3.3.0"
   }
 }

@@ -6,7 +6,7 @@ module.exports = function (environment) {
     modulePrefix: 'auth-walkthrough',
     environment: environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'http://localhost:4741/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -49,8 +49,9 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.rootURL = '/auth-walkthrough';
     ENV.locationType = 'hash';
-  }
+    ENV.apiHost = '<% replace with the URL to your deployed API %>';  }
 
   return ENV;
 };
