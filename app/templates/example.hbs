@@ -1,5 +1,9 @@
-Render some shit
 <li>The text "{{model.text}}" is record number {{model.id}} and is owned by user id #{{model.user_id}}.  It was created at {{model.created_at}}</li>
+
+<form {{action 'editEntry' model on='submit'}}>
+  {{input value=model.text}}
+  <button class="btn btn-primary"> Edit an Entry </button>
+</form>
 
 {{!-- {{#each model as |example|}}
 {{log example}}

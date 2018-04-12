@@ -13,6 +13,8 @@ Router.map(function () {
   this.route('users')
   this.route('examples', function () {})
   this.route('example', {path: '/examples/:examples_id'})
+  this.route('create', {path: '/examples/create'})
+  this.route('delete', {path: '/examples/delete/:examples_id'})
 })
 
 export default Router

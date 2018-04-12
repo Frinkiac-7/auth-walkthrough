@@ -1,4 +1,4 @@
-import Route from '@ember/routing/route'
+import Route from '@ember/routing/route';
 
 export default Route.extend({
   model (params) {
@@ -8,10 +8,10 @@ export default Route.extend({
     return this.get('store').findRecord('example', params.examples_id)
   },
   actions: {
-    editEntry (model) {
+    deleteEntry (model) {
       console.log('Invoking editEntry')
       console.log('model is', model)
-      model.save()
+      model.destroyRecord()
       // this.sendAction('editEntry', model)
     }
   }
