@@ -1,0 +1,14 @@
+<h2>Edit an Entry</h2>
+<h3>This /app/templates/components/examples-edit.hbs file</h3>
+{{!-- REMEMBER THAT YOU MUST INVOKE THE MODEL INSIDE OF an iterative #EACH statement or nothing will be passed--}}
+<ul>
+  {{#each example as |item|}}
+  {{log example}}
+  <li>The text "{{item.text}}" is record number {{item.id}} and is owned by user id #{{item.user_id}}.  It was created at {{item.created_at}}</li>
+  <form {{action 'editEntry' item on='submit'}}>
+    {{input value=item.text}}
+    <button class="btn btn-primary"> Edit an Entry </button>
+  </form>
+  {{/each}}
+</ul>
+{{!-- {{yield}} --}}

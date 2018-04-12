@@ -1,9 +1,17 @@
 <h2>Examples</h2>
-<p>This is the examples.hbs file</p>
-<p>The model is: {{model}}</p>
+<h3>This is the /app/templates/examples.hbs file</h3>
 
 <ul>
   {{#each model as |example|}}
-  <li>{{example.text}}</li>
+  {{!-- {{log example}} --}}
+  <li>The text "{{example.text}}" is record number {{example.id}} and is owned by user id #{{example.user_id}}</li>
   {{/each}}
 </ul>
+
+{{examples-edit example=model
+                editEntry='saveChange'}}
+{{!-- This line is required to pass data TO the component --}}
+
+{{!-- {{edit example=model}} --}}
+
+{{outlet}}
